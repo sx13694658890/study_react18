@@ -11,3 +11,5 @@ console.log(newstr);
 //     console.log(item,index,array,a);
   
 // })
+
+let sum=arr.reduce((sum,item)=>sum+=item,0)
