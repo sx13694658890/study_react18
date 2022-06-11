@@ -1,0 +1,70 @@
+@border:5px solid #000;
+@bgcolor:yellow;
+@item:color;
+@direction:right;
+.class{
+    border:@border;
+}
+
+// 混合代参
+/**
+    传参 , 分割   传给各个参数
+    ；  则会传给某个参数
+*/
+.border1(@bg:blue){
+    background-@{item}: @bg;
+}
+
+.boxshadow(@x:5px,@y:5px,@area:5px,@color:#ccc){
+    -webkit-box-shadow:@x @y @area @color;
+}
+
+//   判断  匹配模式
+.triangle(top,@w:10px,@c:red){
+    border-width: @w;
+    border-color:transparent transparent @c transparent;
+    border-style: dashed dashed solid dashed;
+}
+.triangle(right,@w:10px,@c:red){
+    border-width: @w;
+    border-color:transparent transparent  transparent @c;
+    border-style: dashed dashed  dashed solid;
+}
+// 公共样式 @_固定格式
+.triangle(@_,@w:10px,@c:red){
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.pop(r){
+    position: relative;
+}
+.pop(a){
+    position: absolute;
+}
+.pop(f){
+    position: fixed;
+}
+
+.box2{
+    .triangle(@direction);
+}
+
+//  运算  ~ 引号不进行编译 ‘’
+
+.box4{
+    width: 300px+100;
+    height: 400px - 100;
+    background: @bgcolor;
+    filter:~'alpha(opacity:50)';
+}
+
+
+.mixin(@color;@padding:xxx;@margin:2){
+    border:@arguments
+};
+
+
+.divmaizl{
+    .mixin(#000;@margin:40px;)
+}

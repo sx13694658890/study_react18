@@ -1,28 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React-18</title>
     <!-- react -->
-   <script src="./js/react.development.js"></script>
-   <!-- recct-dom -->
-   <script src="./js/react-dom.development.js"></script>
-</head>
-<body>
+    <script src="./js/react.development.js"></script>
+    <!-- recct-dom -->
+    <script src="./js/react-dom.development.js"></script>
+    <!--babel -->
+    <script src="./js/babel.min.js"></script>
+  </head>
+  <body>
+    <button id="btn">添加数据</button>
+    <hr  />
     <div id="root"></div>
-    
-    <script type="module">
-        const reactObj={
-          id:"btn",
-          className:"btn",
-          style:{color:"red",fontSize:"28px"},
-          onClick:()=>{alert("react-18")}
+
+    <!-- js代码 被 babel处理 -->
+    <script type="text/babel">
+      function reactelment() {
+        const reactObj = {
+          id: "btn",
+          className: "btn",
+          style: { color: "red", fontSize: "28px" },
+          onClick: () => {
+            alert("react-18");
+          },
+        };
+        //   创建React 元素
+        const div = React.createElement(
+          "div",
+          { className: "container" },
+          React.createElement("span", reactObj, "react  child")
+        );
+        return div;
       }
-      const div= React.createElement("div",{className:"container"},React.createElement("span",reactObj,"react  child"))
-     
-       ReactDOM.createRoot(document.getElementById("root")).render(div)
+
+      function DemoItem() {
+        /**
+         * 不是字符串 不加引号
+         * 标签小写 组件大写
+         * 使用{} 嵌套
+         *
+         */
+        const [num, setnum] = React.useState([1, 2, 3]);
+        return (
+          <ul>
+            {num.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        );
+      }
+
+      //   React 18
+      /**
+       * createRoot  根元素
+       * render   根元素所有内容删除 渲染React元素
+       * 重复调用render  React会发生比较
+       */
+      function render(Element) {
+        ReactDOM.createRoot(document.getElementById("root")).render(Element);
+      }
+
+      //  React 17
+      // ReactDOM.render(div,document.getElementById("root"))
+      const data = ["唐僧", "悟空"];
+
+     function renderIitem(data){
+        const changeDom = (
+        <div>
+          <ul>
+            {data.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      );
+      return changeDom
+     }
+      render(renderIitem(data));
+      document.getElementById("btn").addEventListener("click", () => {
+        data.push("沙僧");
+        console.log('====================================');
+        console.log(data);
+        console.log('====================================');
+      render( renderIitem(data));
+       
+        
+    
+      });
     </script>
-</body>
+  </body>
 </html>

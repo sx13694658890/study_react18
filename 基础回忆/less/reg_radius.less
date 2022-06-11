@@ -1,0 +1,51 @@
+// @import (reference) "";
+// @import (inline) "";
+// @import (once) "";
+// @import (less) "";
+// @import (css) "";
+// @import (multiple) "";
+@item:item;
+.border(all,@w:5px){
+    border-radius:@w;
+}
+
+
+
+// 混合返回值
+
+
+.average(@x,@y){
+    @average:((@x,@y)/2);
+}
+
+// 运算
+
+.wp{
+    margin: 0 auto;
+    width: (500 - 50)*2+ 1px;
+}
+
+//  函数
+.wap{
+    .list-@{item}{
+        color: #888;
+    }
+}
+
+
+// 命名空间
+
+#bgcolor(){
+    .a{
+        color:#888;
+        &:hover{
+            color:#ff6600;
+        }
+    }
+}
+
+.bgcolor1{
+    @color:#ff0000;
+    #bgcolor>.a;
+    #bgcolor() !important;
+}

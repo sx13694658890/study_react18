@@ -1,0 +1,28 @@
+@import "./minxin.less";
+@background:rgba(0,0,0,.5);
+@w:100%;
+@h:100%;
+// 
+@property:"list-item";
+
+.container{
+    width: @w;
+    height: @h;
+    .border1(@background);
+  
+    .inputclass{
+        font-size: 28px;
+        outline: none;
+        border: none;
+        border:1px solid black;
+        text-indent: 1em;
+        &::placeholder{
+            font-weight: 400;
+            color: red;
+        }
+    }
+
+    @{property}{
+        font-size: 23px;
+    }
+}
