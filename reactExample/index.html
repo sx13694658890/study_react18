@@ -14,11 +14,12 @@
   </head>
   <body>
     <button id="btn">添加数据</button>
-    <hr  />
+    <hr />
     <div id="root"></div>
 
     <!-- js代码 被 babel处理 -->
     <script type="text/babel">
+      initRender();
       function reactelment() {
         const reactObj = {
           id: "btn",
@@ -36,7 +37,6 @@
         );
         return div;
       }
-
       function DemoItem() {
         /**
          * 不是字符串 不加引号
@@ -53,44 +53,41 @@
           </ul>
         );
       }
-
-      //   React 18
-      /**
-       * createRoot  根元素
-       * render   根元素所有内容删除 渲染React元素
-       * 重复调用render  React会发生比较
-       */
       function render(Element) {
+        //   React 18
+        /**
+         * createRoot  根元素
+         * render   根元素所有内容删除 渲染React元素
+         * 重复调用render  React会发生比较
+         */
         ReactDOM.createRoot(document.getElementById("root")).render(Element);
+
+        //  React 17
+        // ReactDOM.render(div,document.getElementById("root"))
       }
-
-      //  React 17
-      // ReactDOM.render(div,document.getElementById("root"))
-      const data = ["唐僧", "悟空"];
-
-     function renderIitem(data){
+      function renderIitem(data) {
         const changeDom = (
-        <div>
-          <ul>
-            {data.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      );
-      return changeDom
-     }
-      render(renderIitem(data));
-      document.getElementById("btn").addEventListener("click", () => {
-        data.push("沙僧");
-        console.log('====================================');
-        console.log(data);
-        console.log('====================================');
-      render( renderIitem(data));
-       
-        
-    
-      });
+          <div>
+            <ul>
+              {data.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        );
+        return changeDom;
+      }
+      function initRender() {
+        const data = ["唐僧", "悟空"];
+        render(renderIitem(data));
+        document.getElementById("btn").addEventListener("click", () => {
+          data.push("沙僧");
+          console.log("====================================");
+          console.log(data);
+          console.log("====================================");
+          render(renderIitem(data));
+        });
+      }
     </script>
   </body>
 </html>

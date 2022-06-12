@@ -1,0 +1,26 @@
+.item{
+    width: 50px;
+    height: 53px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.item .item-mouth,.item .item-day{
+    padding-top: 2px;
+    padding-bottom: 1px;
+   
+}
+.item .item-mouth{
+    height: 20;
+    font-size: 13px;
+    background: #ff5050;
+    color: #fff;
+    font-weight: 700;
+    
+}
+.item .item-day{
+    font-size: 27px;
+    font-weight: 700;
+    background: #fff;
+}

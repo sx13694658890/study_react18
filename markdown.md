@@ -23,3 +23,24 @@ http://koala-app.com/index-zh.html
 
 
 
+#####  git  tag
+
+
+
+git tag 列出已有tag
+
+
+git -a tagname -m "备注"   创建一个带备注的tag
+
+git show tagname  查看tag详细信息
+
+
+
+git tag -a v1.2 9fceb02 -m "my tag"     给指定某个commit号加上tag
+
+
+git push origin v1.0    tag同步到远程服务器
+git push origin --tags   所有
+
+git tag -d v0.1.2  本地删除
+git push origin :refs/tags/tagName   远端删除tag

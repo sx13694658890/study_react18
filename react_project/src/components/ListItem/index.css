@@ -1,0 +1,26 @@
+.list-item{
+   
+    border-radius: 10px;
+    background: orange;
+    margin-bottom: 10px;
+    display: flex;
+    box-shadow: 0 0 2px 1px #ddd;
+    padding:6px;
+}
+
+.list-item .content{
+    height: 53px;
+    flex: auto;
+    text-align: center;
+    
+}
+
+.list-item .content .title {
+    margin-bottom: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.list-item .content .time {
+        font-size: 16px;
+        color: #dd3359;
+        font-family: 'Times New Roman', Times, serif;
+}

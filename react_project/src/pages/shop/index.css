@@ -1,0 +1,54 @@
+.cardShop{
+    position: relative;
+    width: 100px;
+    height: 160px;
+    padding:10px 6px ;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.cardShop .showimg{
+    width: 88px;
+    height: 100px;
+}
+.cardShop .showimg >img{
+
+    width: 100%;
+    height: 100%;
+}
+.cardShop .ardShop_mesage{
+
+}
+.cardShop .ardShop_mesage .cardShop_mesage_title{
+    font-size: 14px;
+}
+.cardShop .ardShop_mesage .cardShop_mesage_source{
+    font-size: 16px;
+}
+
+
+/* 计数器 */
+.counter_body{
+   
+}
+.counter_body .counter_body_red,.counter_body .counter_body_add{
+    cursor: pointer;
+    font-size: 30px;
+}
+.counter_body .counter_body_num{
+    position: relative;
+    height: 24px;
+   top: -5px;
+    width: 30px;
+    outline: none;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+    text-align: center;
+    
+}
+.counter_body .counter_body_red{}
+.counter_body .counter_body_add{
+   
+}
