@@ -1,7 +1,9 @@
 import List from "./List";
 import Time from "./Time";
 import ListItem from "./ListItem";
-
+import Form from "./Form";
+import Protal from "./ComformModal";
+import Select from "./Select"
 
 
 
@@ -21,5 +23,5 @@ import ListItem from "./ListItem";
 
 
 export {
-    List,Time,ListItem
+    List,Time,ListItem,Form,Protal,Select
 }

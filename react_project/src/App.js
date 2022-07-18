@@ -1,6 +1,6 @@
 import React from "react";
 
-import {List,Time,ListItem} from "./components/"
+import {List,Time,ListItem,Form,Protal,Select} from "./components/"
 import {News} from "./pages"
 const arr=[
     {
@@ -27,8 +27,15 @@ const arr=[
 ]
 
 export default function App() {
+    const aaa={fontSize:"45px"}
+    const flag=false
+    const handlerSelect=(value)=>{
+        console.log(value);
+    }
   return (
     <div>
+        <div> <Select title={"年份"} onSelectChange={handlerSelect} /></div>
+        <Form></Form>
       <List > 
        {
         arr.map(item=>{
@@ -38,11 +45,15 @@ export default function App() {
                     <h5 className="title">{item.title}</h5>
                     <p className="time">{item.timeTotal}</p>
                 </div>
+                <span  className="delete">x</span>
             </ListItem>
         })
        }
     </List>
+
     <News title={"官网商城"}/>
+    {flag?<Protal></Protal>:null}
+    
     </div>
   )
 }

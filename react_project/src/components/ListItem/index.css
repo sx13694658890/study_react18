@@ -24,3 +24,16 @@
         color: #dd3359;
         font-family: 'Times New Roman', Times, serif;
 }
+.list-item  .delete{
+   
+    cursor: pointer;
+    transition: .3s ;
+    width: 10px;
+    height:10px;
+}
+.list-item  .delete:hover {
+    color: blueviolet;
+        transform: rotate(1turn);
+      
+      
+}

@@ -1,0 +1,27 @@
+{
+    "presets": [
+        [
+            "env",{
+                "targets":{"browsers":"ie>=9"},
+                "useBuiltIns":"usage",
+                "debug":true
+            }
+        ]
+    ],
+    "plugins": [
+        "syntax-dynamic-import",
+        [
+            "transform-runtime",{
+                "helpers":false,
+                "polyfill":true,
+                "regenerator":true
+            }
+        ],
+        ["transform-es2015-classes",{
+            "loose":true
+        }],
+        "transform-es2015-typeof-symbol",
+        "transform-es2015-modules-simple-commonjs",
+        "transform-proto-to-assign"
+    ]
+}

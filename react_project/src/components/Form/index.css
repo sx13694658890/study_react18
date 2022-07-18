@@ -1,0 +1,16 @@
+
+.form-main-item{
+  display: flex;
+  justify-content: space-evenly;
+}
+.form-main-item label{
+
+}
+.form-main-item input{
+  outline: none;
+ 
+  flex: auto;
+}
+.form-main-button button{
+  margin: 0 auto;
+}

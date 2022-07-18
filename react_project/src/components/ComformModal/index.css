@@ -1,0 +1,21 @@
+.back-drop{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background:rgba(0, 0,0 ,.3);
+}
+.back-message{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 600px;
+    height: 550px;
+    background: blue;
+    
+}
