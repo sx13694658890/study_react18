@@ -9,6 +9,25 @@
 </head>
 <body>
     <div id="root"></div>
-    
+    <script>
+        function backtrack(list,temp,nums){
+     if(temp.length===nums.length){
+            return list.push([...temp])
+     }
+     for(let i=0;i<nums.length;i++){
+            if(temp.includes(nums[i])){
+                console.log(temp,"________")
+                continue
+            }
+            temp.push(nums[i])
+            console.log("ddddd",temp)
+            backtrack(list,temp,nums)
+            temp.pop()
+     }
+ }
+ let list=[];
+ backtrack(list,[],[1,2,3])
+console.log(list,"+++++++=")
+    </script>
 </body>
 </html>
